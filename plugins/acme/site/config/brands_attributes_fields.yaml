@@ -1,7 +1,0 @@
-ceo:
-    label: CEO Name
-    tab: Parameters
-top:
-    label: Top
-    tab: Parameters
-    type: switch

@@ -48,8 +48,13 @@ class Plugin extends PluginBase
                 return;
             }
 
-            // profile fields
-            $configFile = __DIR__ . '/config/brands_attributes_fields.yaml';
+            // new fields
+            $configFile = __DIR__ . '/config/brands_fields.yaml';
+            $config = Yaml::parse(File::get($configFile));
+            $form->addFields($config);
+
+            // new tab fields
+            $configFile = __DIR__ . '/config/brands_tab_fields.yaml';
             $config = Yaml::parse(File::get($configFile));
             $form->addTabFields($config);
         });
