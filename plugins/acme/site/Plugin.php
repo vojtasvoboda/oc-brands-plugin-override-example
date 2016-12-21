@@ -10,6 +10,16 @@ use Yaml;
 
 class Plugin extends PluginBase
 {
+    /** @var array Plugin dependencies. */
+    public $require = [
+        'VojtaSvoboda.Brands',
+    ];
+
+    /**
+     * Plugin details.
+     *
+     * @return array
+     */
     public function pluginDetails()
     {
         return [
@@ -20,8 +30,17 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Use cases covered below:
+     * - we want to use Brands plugin to manage our Clients
+     * - we have to rename Brands to Clients
+     * - add new fileds (ceo, top) to Brand model
+     * - extend Brand form to add these new fields also to form
+     * - extend Brands listing to add these new fields to listing
+     */
     public function boot()
     {
+        // rename Brands to Clients
         Event::listen('backend.menu.extendItems', function($manager)
         {
             // override VojtaSvoboda.Brands navigation name
@@ -30,7 +49,7 @@ class Plugin extends PluginBase
             ]);
         });
 
-        // extend VojtaSvoboda.Brand model
+        // extend VojtaSvoboda.Brand model and add new fields
         Brand::extend(function($model)
         {
             // add new fillable
