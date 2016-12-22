@@ -15,11 +15,6 @@ class Plugin extends PluginBase
         'VojtaSvoboda.Brands',
     ];
 
-    /**
-     * Plugin details.
-     *
-     * @return array
-     */
     public function pluginDetails()
     {
         return [
@@ -30,14 +25,6 @@ class Plugin extends PluginBase
         ];
     }
 
-    /**
-     * Use cases covered below:
-     * - we want to use Brands plugin to manage our Clients
-     * - we have to rename Brands to Clients
-     * - add new fileds (ceo, top) to Brand model
-     * - extend Brand form to add these new fields also to form
-     * - extend Brands listing to add these new fields to listing
-     */
     public function boot()
     {
         // rename Brands to Clients
