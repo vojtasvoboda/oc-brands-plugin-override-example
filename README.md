@@ -1,6 +1,6 @@
 # Brands plugin override examples
 
-In this repository you can find examples how to extend OctoberCMS backend, or OctoberCMS plugins. This README covers 
+In this repository you can find examples how to extend OctoberCMS backend, or OctoberCMS plugins. This text covers 
 this cases:
 
 - add new menu item
@@ -15,25 +15,25 @@ this cases:
 ## Real example
 
 There is also Plugin.php file where you can find real example how to take 
-[Brands plugin](http://octobercms.com/plugin/vojtasvoboda-brands) and use it for managing your clients.
+[Brands plugin](http://octobercms.com/plugin/vojtasvoboda-brands) and use it for managing your Clients.
 
 We want to use Brands plugin to manage our Clients. So we have to rename backend main menu item from Brands to Clients. 
 Then we need to add new fields `ceo` (Company CEO name) and `top` (if this company is our TOP client, or not).
 
-When extending some plugin, first step should be create new plugin and add all extending method there. Never change 
+When extending some plugin, first step should be **create new plugin** and add all extending method here. Never change 
 plugin functionality directly at the plugin's folder, because you lose all changes after first update.
 
-So we create new plugin MyWebsite.Site by this terminal command in our project folder:
+So we create new plugin Acme.Site by this terminal command in our project root folder:
 
 ```
-php artisan create:plugin MyWebsite.Site
+php artisan create:plugin Acme.Site
 ```
 
-Then open newly generate Plugin.php file and copy-paste extending blocks from examples below.
+Then open newly generate Plugin.php file and copy-paste **extending blocks** from examples below.
 
 1. For rename main menu item see section **Rename main menu item**.
 2. Then we need to add new fields `ceo` and `top` to the database, because we need this informations to be saved. 
-We have to create migration file (see updates folder in plugin's directory). And then mention this migration 
+We have to create migration file (see updates folder in this plugin's directory). And then add this migration 
 at `version.yaml` file. After we have created migration we have to run `php artisan october:up` to run migrations.
 3. When the database is updated we can add this new fields to the Model to make them visible and to add 
 some validations rules. For add them to the Model see section **Extend model class**.
