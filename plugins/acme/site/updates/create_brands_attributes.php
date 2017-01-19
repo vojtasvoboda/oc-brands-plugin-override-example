@@ -19,7 +19,7 @@ class CreateBrandsAttributesTable extends Migration
     {
         DB::statement("SET foreign_key_checks = 0");
         Schema::table('vojtasvoboda_brands_brands', function ($table) {
-            $table->dropColumns(['ceo', 'top']);
+            $table->dropColumn(['ceo', 'top']);
         });
         DB::statement("SET foreign_key_checks = 1");
     }
