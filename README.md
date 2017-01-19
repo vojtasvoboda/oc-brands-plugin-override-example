@@ -45,7 +45,7 @@ some validations rules. For add them to the Model see section **Extend model cla
 Add these lines to Plugin.php to the boot() method:
 
 ```
-Event::listen('backend.menu.extendItems', function($manager)
+Event::listen('backend.menu.extendItems', function ($manager)
 {
     $manager->addMainMenuItem('MyWebsite.Site', 'items', [
         'label' => 'Items',
@@ -64,7 +64,7 @@ For adding side menu items use `$manager->addSideMenuItem()` method.
 Add these lines to Plugin.php to the boot() method:
 
 ```
-Event::listen('backend.menu.extendItems', function($manager)
+Event::listen('backend.menu.extendItems', function ($manager)
 {
     // override VojtaSvoboda.Brands navigation name
     $manager->addMainMenuItem('VojtaSvoboda.Brands', 'brands', [
@@ -96,7 +96,7 @@ After create migration, you have to run it by `php artisan october:up` command.
 
 ```
 // extend VojtaSvoboda.Brand model
-Brand::extend(function($model)
+Brand::extend(function ($model)
 {
     // add new fillable fields
     $model->addFillable(['ceo', 'top']);
@@ -111,7 +111,7 @@ Brand::extend(function($model)
 
 ```
 // extend VojtaSvoboda.Brand Brands controller
-Brands::extendFormFields(function($form, $model, $context)
+Brands::extendFormFields(function ($form, $model, $context)
 {
     // apply only for Brand model
     if (!$model instanceof Brand) {
@@ -144,7 +144,7 @@ Just remove form item and than add it again with new parameters.
 
 ```
 // extend user listing
-Event::listen('backend.list.extendColumns', function($widget)
+Event::listen('backend.list.extendColumns', function ($widget)
 {
     // only for Brands controller
     if (!$widget->getController() instanceof Brands) {
