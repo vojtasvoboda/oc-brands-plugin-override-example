@@ -1,4 +1,4 @@
-<?php namespace Kikafe\Site\Updates;
+<?php namespace Acme\Site\Updates;
 
 use Illuminate\Support\Facades\DB;
 use October\Rain\Database\Updates\Migration;
