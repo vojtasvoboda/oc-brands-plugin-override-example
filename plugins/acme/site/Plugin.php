@@ -28,7 +28,7 @@ class Plugin extends PluginBase
     public function boot()
     {
         // rename Brands to Clients
-        Event::listen('backend.menu.extendItems', function($manager)
+        Event::listen('backend.menu.extendItems', function ($manager)
         {
             // override VojtaSvoboda.Brands navigation name
             $manager->addMainMenuItem('VojtaSvoboda.Brands', 'brands', [
@@ -37,7 +37,7 @@ class Plugin extends PluginBase
         });
 
         // extend VojtaSvoboda.Brand model and add new fields
-        Brand::extend(function($model)
+        Brand::extend(function ($model)
         {
             // add new fillable
             $model->addFillable(['ceo', 'top']);
@@ -48,7 +48,7 @@ class Plugin extends PluginBase
         });
 
         // extend VojtaSvoboda.Brand Brands controller
-        Brands::extendFormFields(function($form, $model, $context)
+        Brands::extendFormFields(function ($form, $model, $context)
         {
             if (!$model instanceof Brand) {
                 return;
@@ -66,7 +66,7 @@ class Plugin extends PluginBase
         });
 
         // extend user listing
-        Event::listen('backend.list.extendColumns', function($widget)
+        Event::listen('backend.list.extendColumns', function ($widget)
         {
             if (!$widget->getController() instanceof Brands) {
                 return;
