@@ -125,7 +125,7 @@ Brands::extendFormFields(function ($form, $model, $context)
 });
 ```
 
-For adding new tab fields use `$form->addTabFields()` method.
+For adding new tab fields use `$form->addTabFields()` or `$form->addSecondaryTabFields()` method.
 
 ## Remove form fields
 
