@@ -166,3 +166,7 @@ Event::listen('backend.list.extendColumns', function ($widget)
     ]);
 });
 ```
+
+## Override translations
+
+In lang folder you can find two examples of overriding translations - for core module and plugin.
