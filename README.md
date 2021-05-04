@@ -134,6 +134,9 @@ Code is the same like for Add new form field above, just change method name:
 ```
 // remove logo
 $form->removeField('logo');
+
+// or try
+unset($form->secondaryTabs['fields']['categories']);
 ```
 
 ## Update form fields
